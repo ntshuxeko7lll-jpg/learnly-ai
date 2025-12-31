@@ -3,51 +3,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learnly AI</title>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles/main.css" />
+  <title>LearnSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <h1>Learnly AI</h1>
-    <p>Offline-first AI-powered learning (Grades 8–12)</p>
 
-    <nav>
-      <button id="homeBtn">Home</button>
-      <button id="learnBtn">Learn</button>
-    </nav>
+<body>
+
+  <header>
+    <h1>LearnSphere</h1>
   </header>
 
-  <!-- Main content -->
-  <main id="app">
-    <p>Loading...</p>
-  </main>
+  <main id="app"></main>
 
-  <!-- Core scripts -->
-  <script src="./config.js"></script>
-  <script src="./core/state.js"></script>
-  <script src="./core/router.js"></script>
+  <nav class="nav">
+    <button onclick="router.go('home')">Home</button>
+    <button onclick="router.go('learn')">Learn</button>
+    <button onclick="router.go('practice')">Practice</button>
+    <button onclick="router.go('progress')">Progress</button>
+  </nav>
 
-  <!-- Features -->
-  <script src="./features/home/home.js"></script>
-  <script src="./features/learn/learn.js"></script>
+  <script src="config.js"></script>
+  <script src="core/state.js"></script>
+  <script src="core/router.js"></script>
 
-  <!-- App start -->
+  <script src="features/home.js"></script>
+  <script src="features/learn.js"></script>
+  <script src="features/practice.js"></script>
+  <script src="features/progress.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      router.init();
-
-      document.getElementById("homeBtn").onclick = () => {
-        router.navigate("home");
-      };
-
-      document.getElementById("learnBtn").onclick = () => {
-        router.navigate("learn");
-      };
-    });
+    window.onload = () => router.go("home");
   </script>
+
 </body>
-  </html>
+</html>
