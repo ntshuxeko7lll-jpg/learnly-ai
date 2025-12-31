@@ -3,31 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LearnSphere</title>
+  <title>Learnly AI</title>
 
-  <link rel="stylesheet" href="styles/main.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./styles/main.css" />
 </head>
 <body>
 
-  <div id="app"></div>
+  <!-- App Header -->
+  <header>
+    <h1>Learnly AI</h1>
+    <p>Offline-first AI-powered learning (Grades 8–12)</p>
+  </header>
 
-  <nav class="bottom-nav">
-    <button onclick="router.navigate('home')">Home</button>
-    <button onclick="router.navigate('learn')">Learn</button>
+  <!-- Navigation -->
+  <nav>
+    <button id="nav-home">Home</button>
+    <button id="nav-learn">Learn</button>
   </nav>
 
-  <link rel="stylesheet" href="styles/main.css" />
+  <!-- App Content -->
+  <main id="app">
+    Loading...
+  </main>
 
-<script src="config.js"></script>
-<script src="core/state.js"></script>
-<script src="core/router.js"></script>
+  <!-- Core Scripts (VERY IMPORTANT ORDER) -->
+  <script src="./config.js"></script>
+  <script src="./core/state.js"></script>
+  <script src="./core/router.js"></script>
 
-<script src="features/home/home.js"></script>
-<script src="features/learn/learn.js"></script>
+  <!-- Features -->
+  <script src="./features/home/home.js"></script>
+  <script src="./features/learn/learn.js"></script>
+
+  <!-- App Start -->
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
+      router.init("app");
+
+      document.getElementById("nav-home").onclick = () => {
+        router.navigate("home");
+      };
+
+      document.getElementById("nav-learn").onclick = () => {
+        router.navigate("learn");
+      };
+
       router.navigate("home");
     });
   </script>
 
 </body>
-</html>
+  </html>
