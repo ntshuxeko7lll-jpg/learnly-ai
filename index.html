@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learnly AI</title>
 
-  <!-- Main CSS -->
+  <!-- Styles -->
   <link rel="stylesheet" href="./styles/main.css" />
 </head>
 <body>
-
-  <!-- App Header -->
+  <!-- Header -->
   <header>
     <h1>Learnly AI</h1>
     <p>Offline-first AI-powered learning (Grades 8–12)</p>
+
+    <nav>
+      <button id="homeBtn">Home</button>
+      <button id="learnBtn">Learn</button>
+    </nav>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <button id="nav-home">Home</button>
-    <button id="nav-learn">Learn</button>
-  </nav>
-
-  <!-- App Content -->
+  <!-- Main content -->
   <main id="app">
-    Loading...
+    <p>Loading...</p>
   </main>
 
-  <!-- Core Scripts (VERY IMPORTANT ORDER) -->
+  <!-- Core scripts -->
   <script src="./config.js"></script>
   <script src="./core/state.js"></script>
   <script src="./core/router.js"></script>
@@ -36,22 +35,19 @@
   <script src="./features/home/home.js"></script>
   <script src="./features/learn/learn.js"></script>
 
-  <!-- App Start -->
+  <!-- App start -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      router.init("app");
+      router.init();
 
-      document.getElementById("nav-home").onclick = () => {
+      document.getElementById("homeBtn").onclick = () => {
         router.navigate("home");
       };
 
-      document.getElementById("nav-learn").onclick = () => {
+      document.getElementById("learnBtn").onclick = () => {
         router.navigate("learn");
       };
-
-      router.navigate("home");
     });
   </script>
-
 </body>
   </html>
