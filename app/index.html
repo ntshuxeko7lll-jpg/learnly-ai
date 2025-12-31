@@ -4,21 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LearnSphere</title>
+
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <h1>LearnSphere</h1>
-  <p>High School Learning App (Grades 8–12)</p>
 
-  <nav>
-    <button>Home</button>
-    <button>Learn</button>
-    <button>Practice</button>
-    <button>AI Tutor</button>
-    <button>Progress</button>
+  <div id="app"></div>
+
+  <nav class="bottom-nav">
+    <button onclick="router.navigate('home')">Home</button>
+    <button onclick="router.navigate('learn')">Learn</button>
   </nav>
 
-  <main id="app">
-    <p>App loading…</p>
-  </main>
+  <script src="config.js"></script>
+  <script src="core/state.js"></script>
+  <script src="core/storage.js"></script>
+  <script src="core/router.js"></script>
+
+  <script src="features/home/home.js"></script>
+  <script src="features/learn/learn.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      router.navigate("home");
+    });
+  </script>
+
 </body>
 </html>
